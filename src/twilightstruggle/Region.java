@@ -1,10 +1,10 @@
 package twilightstruggle;
 
-import java.util.Set;
+import java.util.*;
 
 public class Region {
     private static Board board;
-    private Set<Country> countries;
+    private List<Country> countries = new ArrayList<Country>();
     private String name;
     private Integer presence;
     private Integer domination;
@@ -12,8 +12,15 @@ public class Region {
     private Integer uncoupableDefconLevel;
     private boolean hasScoringCard;
 
-    public Region(String name, Integer presence, Integer domination, Integer control, Integer uncoupableDefconLevel,) {
+    public Region() { }
 
+    public String getName() {
+        return name;
+    }
+
+    public Region setName(String name) {
+        this.name = name;
+        return this;
     }
 
     public static Board getBoard() {
@@ -24,55 +31,61 @@ public class Region {
         Region.board = board;
     }
 
-    public Set<Country> getCountries() {
+    public List<Country> getCountries() {
         return countries;
     }
 
-    public void setCountries(Set<Country> countries) {
+    public Region setCountries(List<Country> countries) {
         this.countries = countries;
+        return this;
     }
 
     public int getPresence() {
         return presence;
     }
 
-    public void setPresence(int presence) {
+    public Region setPresence(int presence) {
         this.presence = presence;
+        return this;
     }
 
     public int getDomination() {
         return domination;
     }
 
-    public void setDomination(int domination) {
+    public Region setDomination(int domination) {
         this.domination = domination;
+        return this;
     }
 
     public int getControl() {
         return control;
     }
 
-    public void setControl(int control) {
+    public Region setControl(int control) {
         this.control = control;
+        return this;
     }
 
-    public int getHasScoringCard() {
+    public boolean getHasScoringCard() {
         return hasScoringCard;
     }
 
-    public void setHasScoringCard(int hasScoringCard) {
+    public Region setHasScoringCard(boolean hasScoringCard) {
         this.hasScoringCard = hasScoringCard;
+        return this;
     }
 
     public int getUncoupableDefconLevel() {
         return uncoupableDefconLevel;
     }
 
-    public void setUncoupableDefconLevel(int uncoupableDefconLevel) {
+    public Region setUncoupableDefconLevel(int uncoupableDefconLevel) {
         this.uncoupableDefconLevel = uncoupableDefconLevel;
+        return this;
     }
 
-    public boolean isCoupable() {
+    public Boolean isCoupable() {
         return uncoupableDefconLevel < board.getDefcon();
     }
 }
