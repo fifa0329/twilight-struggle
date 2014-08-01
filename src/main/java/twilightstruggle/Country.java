@@ -89,7 +89,15 @@ public class Country extends AbstractCountry {
         this.neighbors.add(neighbor);
     }
 
-    public boolean isCoupable() {
+    public Boolean isCountry() {
+        return true;
+    }
+
+    public Boolean isSuperpower() {
+        return false;
+    }
+
+    public Boolean isCoupable() {
         return this.region.isCoupable();             
     }
 }

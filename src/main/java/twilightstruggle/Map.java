@@ -18,10 +18,23 @@ public class Map {
     private Region parseRegion(String regionLine) {
         String[] lineParts = regionLine.split(",");
         String name = lineParts[0];
-        Integer presence = Integer.parseInt(lineParts[1]);
-        Integer domination = Integer.parseInt(lineParts[2]);
-        Integer control = Integer.parseInt(lineParts[3]);
-        Integer uncoupableDefconLevel = Integer.parseInt(lineParts[4]);
+
+        Integer presence;
+        Integer domination;
+        Integer control;
+        Integer uncoupableDefconLevel;
+
+        if ("-".equals(lineParts[1])) {
+            presence = 0;
+            domination = 0;
+            control = 0;
+        } else {
+            presence = Integer.parseInt(lineParts[1]);
+            domination = Integer.parseInt(lineParts[2]);
+            control = Integer.parseInt(lineParts[3]);
+        }
+
+        uncoupableDefconLevel = Integer.parseInt(lineParts[4]);
 
         return new Region()
                 .setName(name)
@@ -62,7 +75,6 @@ public class Map {
 
         while ((line = br.readLine()) != null) {
             enterRegionIntoMap(parseRegion(line));
-
         }
 
         br.close();
@@ -74,7 +86,8 @@ public class Map {
         String line;
 
         while ((line = br.readLine()) != null) {
-            enterCountryIntoMap(parseCountry(line));
+            Country country = enterCountryIntoMap(parseCountry(line));
+            System.out.println(country.getName());
         }
 
         br.close();
@@ -83,6 +96,10 @@ public class Map {
     private void buildMap() throws Exception {
         buildRegionMap();
         buildCountryHashMap();
+    }
+
+    public void main(String[] args) throws Exception {
+        buildMap();
     }
 }
 
