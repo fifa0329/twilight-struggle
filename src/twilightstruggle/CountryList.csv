@@ -1,0 +1,84 @@
+Austria,Europe,4,n
+Benelux,WesternEurope,3,n
+Bulgaria,EasternEurope,3,n
+Canada,WesternEurope,4,n
+Czechoslovakia,EasternEurope,3,n
+Denmark,WesternEurope,3,n
+East Germany,EasternEurope,3,b
+Finland,Europe,4,n
+France,WesternEurope,3,b
+Greece,WesternEurope,2,n
+Hungary,EasternEurope,3,n
+Italy,WesternEurope,2,b
+Norway,WesternEurope,4,n
+Poland,EasternEurope,3,b
+Romania,EasternEurope,3,n
+Spain/Portugal,WesternEurope,2,n
+Sweden,WesternEurope,4,n
+Turkey,WesternEurope,2,n
+UK,WesternEurope,5,n
+West Germany,WesternEurope,4,b
+Yugoslavia,EasternEurope,3,n
+Egypt,MiddleEast,2,b
+Gulf States,MiddleEast,3,n
+Iran,MiddleEast,2,b
+Iraq,MiddleEast,3,b
+Israel,MiddleEast,4,b
+Jordan,MiddleEast,2,n
+Lebanon,MiddleEast,1,n
+Libya,MiddleEast,2,b
+Saudi Arabia,MiddleEast,3,b
+Syria,MiddleEast,2,n
+Afghanistan,Asia,2,n
+Australia,Asia,4,n
+India,Asia,3,b
+Japan,Asia,4,b
+North Korea,Asia,3,b
+Pakistan,Asia,2,b
+South Korea,Asia,3,b
+Taiwan,Asia,3,n
+Burma,SoutheastAsia,2,n
+Indonesia,SoutheastAsia,1,n
+Laos/Cambodia,SoutheastAsia,1,n
+Malaysia,SoutheastAsia,2,n
+Philippines,SoutheastAsia,2,n
+Thailand,SoutheastAsia,2,b
+Vietnam,SoutheastAsia,1,n
+Algeria,Africa,2,b
+Angola,Africa,1,b
+Botswana,Africa,2,n
+Cameroon,Africa,1,n
+Ethiopia,Africa,1,n
+Ivory/Gold Coast,Africa,2,n
+Kenya,Africa,2,n
+Morocco,Africa,3,n
+Nigeria,Africa,1,b
+South Africa,Africa,3,b
+Saharan States,Africa,1,n
+SE African States,Africa,1,n
+Somalia,Africa,2,n
+Sudan,Africa,1,n
+Tunisia,Africa,2,n
+West African States,Africa,2,n
+Zaire,Africa,1,b
+Zimbabwe,Africa,1,n
+Costa Rica,CentralAmerica,3,n
+Cuba,CentralAmerica,3,b
+Dominican Republic,CentralAmerica,1,n
+El Salvador,CentralAmerica,1,n
+Guatemala,CentralAmerica,1,n
+Haiti,CentralAmerica,1,n
+Honduras,CentralAmerica,2,n
+Mexico,CentralAmerica,2,b
+Nicaragua,CentralAmerica,1,n
+Panama,CentralAmerica,2,b
+Argentina,SouthAmerica,2,b
+Bolivia,SouthAmerica,2,n
+Brazil,SouthAmerica,2,b
+Chile,SouthAmerica,3,b
+Colombia,SouthAmerica,1,n
+Ecuador,SouthAmerica,2,n
+Paraguay,SouthAmerica,2,n
+Peru,SouthAmerica,2,n
+Uruguay,SouthAmerica,2,n
+Venezuela,SouthAmerica,2,b
