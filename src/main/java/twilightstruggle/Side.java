@@ -42,6 +42,11 @@ public class Side {
         return this;
     }
 
+    public Side addMilitaryOperations(Integer militaryOperations) {
+        this.militaryOperations += militaryOperations;
+        return this;
+    }
+
     public Set<Card> getHand() {
         return hand;
     }

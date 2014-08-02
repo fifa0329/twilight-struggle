@@ -23,6 +23,8 @@ public abstract class AbstractCountry {
         return neighbors;
     }
 
+    abstract public Boolean hasInfluence(Side side);
+
     protected void addNeighbor(AbstractCountry neighbor) {
         this.neighbors.add(neighbor);
     }

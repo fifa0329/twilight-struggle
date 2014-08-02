@@ -1,23 +1,22 @@
 package twilightstruggle;
 
-public class Board {
-    private static final Integer HEADLINE_PHASE = 0;
-    private static final Integer DEFCON_PEACE = 5;
-    private static final Integer DEFCON_NUCLEAR_WAR = 1;
+import twilightstruggle.exception.TwilightException;
 
+public class Board {
     private static Side ussr;
     private static Side usa;
     private static Side turn;
     private static Integer defcon;
     private static Integer turnTrack;
     private static Integer actionRoundTrack;
-    private static Integer victoryTrack;
+    private static Integer vpTrack;
     private static Map map;
 
     public Board() throws Exception {
-        defcon = DEFCON_PEACE;
+        defcon = Constants.DEFCON_PEACE;
         turnTrack = 1;
-        actionRoundTrack = HEADLINE_PHASE;
+        actionRoundTrack = Constants.HEADLINE_PHASE;
+        vpTrack = 0;
         ussr = new Side()
                 .setName("USSR");
         usa = new Side()
@@ -52,15 +51,31 @@ public class Board {
         return actionRoundTrack;
     }
 
-    public void setActionRound(Integer actionRound) {
-        this.actionRoundTrack = actionRound;
-    }
-
     public Map getMap() {
         return map;
     }
 
-    public void setMap(Map map) {
-        this.map = map;
+    public Board giveVP(Side side, Integer vps) throws TwilightException {
+        if (Constants.usaName.equals(side.getName())) {
+            vpTrack += vps;
+        } else if (Constants.ussrName.equals(side.getName())) {
+            vpTrack -= vps;
+        } else {
+            throw new TwilightException("Side is neither USA or USSR.");
+        }
+
+        return this;
+    }
+
+    public Integer unmetRequiredMilitaryOperations(Side side) {
+        Integer difference = getDefcon() - side.getMilitaryOperations();
+        return Math.max(difference, 0);
+    }
+
+    public Board newTurn() throws TwilightException {
+        giveVP(usa, unmetRequiredMilitaryOperations(ussr));
+        giveVP(ussr, unmetRequiredMilitaryOperations(usa));
+
+        return this;
     }
 }

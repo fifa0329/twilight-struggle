@@ -8,11 +8,6 @@ import java.util.Collection;
 import java.util.HashMap;
 
 public class Map {
-    private final String resourcePath = "src/main/resources/";
-    private final String regionListFilePath = resourcePath + "RegionList.csv";
-    private final String countryListFilePath = resourcePath + "CountryList.csv";
-    private final String adjacencyListFilePath = resourcePath + "AdjacencyList.csv";
-
     private HashMap<String,AbstractCountry> countryMap = new HashMap<String, AbstractCountry>();
     private HashMap<String,Region> regionMap = new HashMap<String, Region>();
 
@@ -115,7 +110,7 @@ public class Map {
     }
 
     private void buildRegionHashMap() throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(regionListFilePath));
+        BufferedReader br = new BufferedReader(new FileReader(Constants.regionListFilePath));
 
         String line;
         while ((line = br.readLine()) != null) {
@@ -125,7 +120,7 @@ public class Map {
     }
 
     private void buildCountryHashMap() throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(countryListFilePath));
+        BufferedReader br = new BufferedReader(new FileReader(Constants.countryListFilePath));
 
         String line;
         while ((line = br.readLine()) != null) {
@@ -133,20 +128,21 @@ public class Map {
         }
         br.close();
 
-        Superpower USA = new Superpower().setName("US");
-        Superpower USSR = new Superpower().setName("USSR");
+        Superpower USA = new Superpower().setName(Constants.usaName);
+        Superpower USSR = new Superpower().setName(Constants.ussrName);
 
         enterCountryIntoMap(USA);
         enterCountryIntoMap(USSR);
     }
 
     private void buildAdjacencies() throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(adjacencyListFilePath));
+        BufferedReader br = new BufferedReader(new FileReader(Constants.adjacencyListFilePath));
 
         String line;
         while ((line = br.readLine()) != null) {
             makeNeighbors(parseAdjacency(line));
         }
+
         br.close();
     }
 
