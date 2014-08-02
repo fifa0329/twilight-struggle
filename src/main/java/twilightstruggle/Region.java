@@ -85,6 +85,11 @@ public class Region {
         return this;
     }
 
+    public Country addCountry(Country country) {
+        countries.add(country);
+        return country;
+    }
+
     public Boolean isCoupable() {
         return uncoupableDefconLevel < board.getDefcon();
     }

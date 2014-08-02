@@ -1,27 +1,35 @@
 package twilightstruggle;
 
 public class Board {
-    private Side ussr;
-    private Side usa;
-    private Integer defcon;
-    private Integer turn;
-    private Integer actionRound;
-    private Map map;
+    private static final Integer HEADLINE_PHASE = 0;
+    private static final Integer DEFCON_PEACE = 5;
+    private static final Integer DEFCON_NUCLEAR_WAR = 1;
+
+    private static Side ussr;
+    private static Side usa;
+    private static Side turn;
+    private static Integer defcon;
+    private static Integer turnTrack;
+    private static Integer actionRoundTrack;
+    private static Integer victoryTrack;
+    private static Map map;
+
+    public Board() throws Exception {
+        defcon = DEFCON_PEACE;
+        turnTrack = 1;
+        actionRoundTrack = HEADLINE_PHASE;
+        ussr = new Side()
+                .setName("USSR");
+        usa = new Side()
+                .setName("US");
+        map = new Map();
+    }
 
     public Side getUssr() {
         return ussr;
     }
-
-    public void setUssr(Side ussr) {
-        this.ussr = ussr;
-    }
-
     public Side getUsa() {
         return usa;
-    }
-
-    public void setUsa(Side usa) {
-        this.usa = usa;
     }
 
     public Integer getDefcon() {
@@ -33,19 +41,19 @@ public class Board {
     }
 
     public Integer getTurn() {
-        return turn;
+        return turnTrack;
     }
 
     public void setTurn(Integer turn) {
-        this.turn = turn;
+        this.turnTrack = turn;
     }
 
     public Integer getActionRound() {
-        return actionRound;
+        return actionRoundTrack;
     }
 
     public void setActionRound(Integer actionRound) {
-        this.actionRound = actionRound;
+        this.actionRoundTrack = actionRound;
     }
 
     public Map getMap() {

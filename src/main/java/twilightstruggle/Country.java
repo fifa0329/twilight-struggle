@@ -4,17 +4,11 @@ import java.util.Set;
 
 public class Country extends AbstractCountry {
     private static Board board;
-    private String name;
     private Integer influenceUSA;
     private Integer influenceUSSR;
     private Integer stability;
-    private Set<AbstractCountry> neighbors;
     private Region region;
     private Boolean isBattleground;
-
-    public String getName() {
-        return name;
-    }
 
     public Country setName(String name) {
         this.name = name;
@@ -52,15 +46,6 @@ public class Country extends AbstractCountry {
         return this;
     }
 
-    public Set<AbstractCountry> getNeighbors() {
-        return neighbors;
-    }
-
-    public Country setNeighbors(Set<AbstractCountry> neighbors) {
-        this.neighbors = neighbors;
-        return this;
-    }
-
     public Region getRegion() {
         return region;
     }
@@ -83,10 +68,6 @@ public class Country extends AbstractCountry {
         influenceUSA = new Integer(0);
         influenceUSSR = new Integer(0);
         stability = null;
-    }
-
-    protected void addNeighbor(Country neighbor) {
-        this.neighbors.add(neighbor);
     }
 
     public Boolean isCountry() {
