@@ -16,11 +16,7 @@ public class Superpower extends AbstractCountry {
         return this;
     }
 
-    public Boolean hasUsInfluence() {
-        return Constants.usaName.equals(getName());
-    }
-
-    public Boolean hasUssrInfluence() {
-        return Constants.ussrName.equals(getName());
+    public Boolean hasInfluence(Side side) {
+        return side.getName().equals(getName());
     }
 }
